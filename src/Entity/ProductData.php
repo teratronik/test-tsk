@@ -29,6 +29,12 @@ class ProductData
 
     #[ORM\Column(name: "dtmDiscontinued", type: "datetime", nullable: true)]
     private ?\DateTimeInterface $Discontinued = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $stock = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
+    private ?string $price = null;
     
     public function getId(): ?int
     {
@@ -91,6 +97,30 @@ class ProductData
     public function setDiscontinued(?\DateTimeInterface $Discontinued): self
     {
         $this->Discontinued = $Discontinued;
+
+        return $this;
+    }
+
+    public function getStock(): ?int
+    {
+        return $this->stock;
+    }
+
+    public function setStock(?int $stock): static
+    {
+        $this->stock = $stock;
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?string $price): static
+    {
+        $this->price = $price;
 
         return $this;
     }
