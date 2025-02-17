@@ -88,6 +88,8 @@ class ImportCsvCommand extends Command
             $product->setProductName($productName);
             $product->setProductDesc($productDesc);
             $product->setProductCode($productCode);
+            $product->setStock($stock);
+            $product->setPrice($price);
             $product->setAdded($dateNow);
 
             // Handle discontinued products
